@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 style="color: rgb(255, 255, 255);">
+          <i class="fa-solid fa-briefcase"></i>
+        <span>Portfolio</span></h1>
+        <nav class="my-nav">
+          <ul>
+          <button data-section="home">
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+          </button>
+          <button data-section="skills">
+            <i class="fas fa-radiation"></i>
+            <span>Skills</span>
+          </button>
+          <button data-section="contact">
+            <i class="fa-solid fa-address-book"></i>
+            <span>Contacts</span>
+          </button>
+          <button data-section="projects">
+            <i class="fas fa-folder"></i>
+            <span>Projects</span>
+          </button>
+      </ul>
+        </nav>
+      </header>
+    
+
+    <section id="home" class="section">
+        <h2>Personal Information</h2> <img src="peah.jpg" alt="Profile Image" class="profile-image">
+        <div class="info-container">
+          <div class="info-item">
+           <h2>Paul Cedric malojo</h2>
+          
+            <h2>Education</h2>
+            <p>Bachelor of Science in Information Technology</p>
+          </div>
+        </div>
+        <h3>Hobbies</h3>
+        <ul class="hobbies-list">
+          <li>Coding</li>
+          <li>Gaming</li>
+          <li>Reading</li>
+        </ul>
+        <h3>Work Experience</h3>
+        <p>Softwa- still a student lol.</p>
+        <h3>About Me</h3>
+        <p>I don't know why i chose IT and webdev even though i hate HTML and CSS and everything about front-end. help</p>
+      </section>
+    
+    <section id="skills" class="section">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skills-item">
+              <h3>HTML/CSS</h3>
+              <i class="fa-brands fa-html5 fa-4x"></i>
+              <p>Expert at using AI tools because i hate designing teach me back end pls</p>
+            </div>
+            <div class="skills-item">
+              <h3>JavaScript</h3>
+              <i class="fa-brands fa-js fa-4x"></i>
+              <p>Learning, i want to cry</p>
+            </div>
+            <div class="skills-item">
+              <h3>PHP/MySQL</h3>
+              <i class="fa-brands fa-php fa-4x"></i>
+              <p>0 knowledge fr fr</p>
+            </div>
+          </div>
+      </section>
+    
+    <section id="contact" class="section">
+        <h2>Contact ME</h2>
+        <div class="contact-container">
+          <div class="contact-item">
+            <i class="fa-sharp fa-regular fa-envelope fa-3x"></i>
+            <p>123@gmail.com</p>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-phone fa-3x"></i>
+            <p>09999999999</p>
+          </div>
+          <div class="contact-item">
+            <i class="fa-solid fa-location-dot fa-3x"></i>
+            <p>San Pablo City</p>
+          </div>
+        </div>
+      </section>
+    
+    <section id="projects" class="section">
+        <h2>Recent Projects</h2>
+        <ul class="projects-list">
+          <li>
+            <h3>Community Volunteer Coordination Platform</h3>
+            <p>The Community Volunteer Coordination Platform is a web and mobile application designed to streamline volunteer efforts for community events and initiatives by matching volunteers with suitable tasks, facilitating communication, and enhancing engagement. Through features like volunteer registration, event management, and feedback mechanisms, the platform aims to optimize volunteer coordination processes, foster collaboration, and maximize the impact of community-driven projects and initiatives.</p>
+          </li>
+          <li>
+            <h3>The Eco-Friendly Transportation App</h3>
+            <p>offers real-time information on sustainable commuting options like public transit, cycling routes, and electric vehicle charging stations, tailored to users' preferences and locations, encouraging environmentally friendly transportation choices. By promoting the use of eco-friendly modes of transportation and providing tools for tracking and community engagement, the app aims to reduce carbon emissions, foster sustainable commuting habits, and create greener, healthier communities.</p>
+          </li>
+          <li>
+            <h3>Health and Fitness Tracker App</h3>
+            <p>The Health and Fitness Tracker App is a comprehensive mobile application designed to help users monitor their physical activity, nutrition intake, and overall well-being through features like activity tracking, meal logging, and goal setting, empowering them to lead healthier lifestyles.</p>
+          </li>
+        </ul>
+      </section>
+  
+    <script>
+      $(document).ready(function () {
+        const header = $("header");
+        const navButtons = $("nav button");
+        const sections = $("section");
+
+        // Hide all sections except the home section
+        sections.not("#home").hide();
+
+        function showSection(section) {
+          sections.hide();
+          section.show();
+        }
+
+        navButtons.on("click", function () {
+          const sectionId = $(this).data("section");
+          const section = $("#" + sectionId);
+          showSection(section);
+        });
+
+        // Show the home section initially
+        showSection(sections.first());
+      });
+    </script>
+  </body>
+</html>
